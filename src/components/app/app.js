@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import GlobalStyles from 'styles/global';
 import { $cream } from 'styles/colors';
 
+import Badge from 'components/badge/badge';
+
 const Test = styled.div`
   color: ${$cream};
   background: #444;
@@ -18,7 +20,7 @@ function App() {
   return (
     <div>
       <GlobalStyles />
-      <Test>yolo, baby</Test>
+      <Badge />
       {/* <Header /> */}
       {/* <Switch> */}
       {/* <Route exact path="/pathA" component={CompA} /> */}
