@@ -1,20 +1,9 @@
 import React from 'react';
 // import { Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import styled from 'styled-components';
 import GlobalStyles from 'styles/global';
-import { $cream } from 'styles/colors';
 
 import Badge from 'components/badge/badge';
-
-const Test = styled.div`
-  color: ${$cream};
-  background: #444;
-  height: 60px;
-  font-size: 20px;
-  line-height: 3;
-  padding: 0px 0px 0px 8px;
-`;
 
 function App() {
   return (
