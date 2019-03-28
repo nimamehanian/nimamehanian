@@ -9,12 +9,12 @@ const BadgeWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: ${$lime};
   width: 148px;
   height: 148px;
   position: absolute;
   top: 0px;
   left: 0px;
-  background: ${$lime};
   z-index: 3;
 `;
 
