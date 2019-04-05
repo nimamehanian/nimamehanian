@@ -27,7 +27,7 @@ const Images = styled.div`
 `;
 
 function Background() {
-  const [coordinates, setCoordinates] = useState([0, 0]);
+  const [[bgPosX, bgPosY], setCoordinates] = useState([0, 0]);
   const [images] = useState([bg1, bg2]);
   const [currentImage, setCurrentImage] = useState(0);
   const period = 6000;
@@ -50,8 +50,8 @@ function Background() {
     <BackgroundWrapper onMouseMove={e => updateCoordinates(e)}>
       <Images
         currentImage={images[currentImage]}
-        bgPosX={coordinates[0]}
-        bgPosY={coordinates[1]}
+        bgPosX={bgPosX}
+        bgPosY={bgPosY}
       />
     </BackgroundWrapper>
   );
