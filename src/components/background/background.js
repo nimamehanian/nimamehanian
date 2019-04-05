@@ -16,21 +16,20 @@ const BackgroundWrapper = styled.div`
 `;
 
 const Images = styled.div`
-  height: 100vh;
   width: 110vw;
+  height: 100vh;
   background-position: 64% center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: background-image 0.25s ease-in-out;
   background-image: url(${({ currentImage }) => currentImage});
+  transition: background-image 0.25s ease-in-out;
   transform: translate3d(${({ bgPosX }) => bgPosX || 0}px, ${({ bgPosY }) => bgPosY || 0}px, 0px) scale(1.15);
 `;
 
 function Background() {
   const [[bgPosX, bgPosY], setCoordinates] = useState([0, 0]);
+  const [currentImgIdx, setCurrentImgIdx] = useState(0);
   const [images] = useState([bg1, bg2]);
-  const [currentImage, setCurrentImage] = useState(0);
-  const period = 6000;
 
   function updateCoordinates({ clientX, clientY }) {
     const [d0, d1, r0, r1] = [0, 100, 12, -12];
@@ -41,18 +40,12 @@ function Background() {
   }
 
   useInterval(() => {
-    setCurrentImage(
-      currentImage === images.length - 1 ? 0 : currentImage + 1
-    );
-  }, period);
+    setCurrentImgIdx(currentImgIdx === images.length - 1 ? 0 : currentImgIdx + 1);
+  }, 6000);
 
   return (
     <BackgroundWrapper onMouseMove={e => updateCoordinates(e)}>
-      <Images
-        currentImage={images[currentImage]}
-        bgPosX={bgPosX}
-        bgPosY={bgPosY}
-      />
+      <Images currentImage={images[currentImgIdx]} bgPosX={bgPosX} bgPosY={bgPosY} />
     </BackgroundWrapper>
   );
 }
