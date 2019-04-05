@@ -4,12 +4,14 @@ import { hot } from 'react-hot-loader';
 import GlobalStyles from 'styles/global';
 
 import Badge from 'components/badge/badge';
+import Background from 'components/background/background';
 
 function App() {
   return (
     <div>
       <GlobalStyles />
       <Badge />
+      <Background />
       {/* <Header /> */}
       {/* <Switch> */}
       {/* <Route exact path="/pathA" component={CompA} /> */}
