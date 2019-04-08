@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0px;
     outline: none;
     font-size: 10px;
-    background: #f6f9fc;
+    background: #1d1d1d;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }

@@ -13,7 +13,6 @@ const BackgroundWrapper = styled.div`
   bottom: 0px;
   left: 0px;
   overflow: hidden;
-  transform: scale(${({ scale }) => scale || 1});
 `;
 
 const Images = styled(animated.div)`
@@ -51,6 +50,9 @@ function Background() {
       onMouseMove={({ clientX, clientY }) => (
         setCoords({ xy: updateCoordinates(clientX, clientY) })
       )}
+      style={{
+        transform: `scale(${1})`,
+      }}
     >
       <Images
         style={{
