@@ -47,12 +47,10 @@ function Background() {
 
   return (
     <BackgroundWrapper
+      style={{ transform: `scale(${1})` }}
       onMouseMove={({ clientX, clientY }) => (
         setCoords({ xy: updateCoordinates(clientX, clientY) })
       )}
-      style={{
-        transform: `scale(${1})`,
-      }}
     >
       <Images
         style={{

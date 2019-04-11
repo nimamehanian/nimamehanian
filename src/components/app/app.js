@@ -6,12 +6,14 @@ import GlobalStyles from 'styles/global';
 import Badge from 'components/badge/badge';
 import Sidebar from 'components/sidebar/sidebar';
 import Background from 'components/background/background';
+import Hamburger from 'components/hamburger/hamburger';
 
 function App() {
   return (
     <div>
       <GlobalStyles />
       <Badge />
+      <Hamburger isSidebarOpen={0} />
       <Sidebar />
       <Background />
       {/* <Header /> */}
