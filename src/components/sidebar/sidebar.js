@@ -1,8 +1,11 @@
 import React from 'react';
+import Hamburger from 'components/sidebar/sidebar';
 
-function Sidebar() {
+function Sidebar({ isSidebarOpen }) {
   return (
-    <div>SIDEBAR</div>
+    <div>
+      <Hamburger isSidebarOpen={isSidebarOpen} />
+    </div>
   );
 }
 
