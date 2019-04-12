@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 import useInterval from 'utils/useInterval';
@@ -6,7 +6,7 @@ import useInterval from 'utils/useInterval';
 import bg1 from 'images/bg1.jpg';
 import bg2 from 'images/bg2.jpg';
 
-const BackgroundWrapper = styled.div`
+const BackgroundWrapper = styled(animated.div)`
   position: absolute;
   top: 0px;
   right: 0px;
@@ -33,7 +33,11 @@ const updateCoordinates = (x, y) => {
   return [getX(), getY()];
 };
 
-function Background() {
+function Background({ isSidebarOpen }) {
+  const [{ scale }, setScale] = useSpring(() => ({
+    scale: 1,
+    config: { mass: 1, tension: 360, friction: 36 },
+  }));
   const [{ xy }, setCoords] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
@@ -45,9 +49,13 @@ function Background() {
     setCurrentImgIdx(currentImgIdx === images.length - 1 ? 0 : currentImgIdx + 1);
   }, 6000);
 
+  useEffect(() => {
+    setScale({ scale: isSidebarOpen ? 0.94 : 1 });
+  }, [isSidebarOpen]);
+
   return (
     <BackgroundWrapper
-      style={{ transform: `scale(${1})` }}
+      style={{ transform: scale.interpolate(s => `scale(${s})`) }}
       onMouseMove={({ clientX, clientY }) => (
         setCoords({ xy: updateCoordinates(clientX, clientY) })
       )}

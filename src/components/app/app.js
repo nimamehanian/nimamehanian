@@ -7,13 +7,13 @@ import Badge from 'components/badge/badge';
 import Sidebar from 'components/sidebar/sidebarContainer';
 import Background from 'components/background/background';
 
-function App() {
+function App({ isSidebarOpen }) {
   return (
     <div>
       <GlobalStyles />
       <Badge />
       <Sidebar />
-      <Background />
+      <Background isSidebarOpen={isSidebarOpen} />
       {/* <Header /> */}
       {/* <Switch> */}
       {/* <Route exact path="/pathA" component={CompA} /> */}

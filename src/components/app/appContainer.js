@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import App from './app';
 
 const mapStateToProps = state => ({
+  isSidebarOpen: state.sidebar.isSidebarOpen,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = () => ({
 });
 
 const AppContainer = connect(
