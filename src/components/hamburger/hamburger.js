@@ -15,10 +15,6 @@ const Toggler = styled.div`
   z-index: 4;
 `;
 
-const BarWrapper = styled.div`
-  width: 40px;
-`;
-
 const Bar = styled(animated.div)`
   display: block;
   background-color: #f5f7f9;
@@ -28,7 +24,7 @@ const Bar = styled(animated.div)`
 `;
 
 function Hamburger({ isSidebarOpen }) {
-  const config = { mass: 10, tension: 550, friction: 140 };
+  const config = { mass: 1, tension: 360, friction: 36 };
   // Bar 1
   const [{ offsetY }, setOffsetY] = useSpring(() => ({ offsetY: 0, config }));
   const [{ opacity }, setOpacity] = useSpring(() => ({ opacity: 1, config }));
@@ -53,7 +49,7 @@ function Hamburger({ isSidebarOpen }) {
 
   return (
     <Toggler>
-      <BarWrapper>
+      <div style={{ width: '40px' }}>
         <Bar
           style={{
             transform: offsetY.interpolate(y => `translate3d(0px, ${y}px, 0px)`),
@@ -69,11 +65,12 @@ function Hamburger({ isSidebarOpen }) {
           style={{
             transform: interpolate(
               [bar3rotate, offsetX, bar3offsetY],
+              // Order matters: rotate, then translate.
               (r, x, y) => `rotate(${r}deg) translate3d(${x}px, ${y}px, 0px)`
             ),
           }}
         />
-      </BarWrapper>
+      </div>
     </Toggler>
   );
 }

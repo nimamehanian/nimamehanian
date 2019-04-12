@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader';
 import GlobalStyles from 'styles/global';
 
 import Badge from 'components/badge/badge';
-import Sidebar from 'components/sidebar/sidebar';
+import Sidebar from 'components/sidebar/sidebarContainer';
 import Background from 'components/background/background';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div>
       <GlobalStyles />
       <Badge />
-      <Sidebar isSidebarOpen={0} />
+      <Sidebar />
       <Background />
       {/* <Header /> */}
       {/* <Switch> */}

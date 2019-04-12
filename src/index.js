@@ -9,7 +9,7 @@ import { Route } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './components/app/appContainer';
-import createRootReducer from './components/app/reducer';
+import createRootReducer from './components/app/appReducer';
 
 const history = createBrowserHistory();
 const composeEnhancers = composeWithDevTools({});
