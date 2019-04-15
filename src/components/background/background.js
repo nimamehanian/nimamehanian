@@ -22,7 +22,6 @@ const Images = styled(animated.div)`
   background-repeat: no-repeat;
   background-size: cover;
   transition: background-image 0.25s ease-in-out;
-  will-change: transform;
 `;
 
 const updateCoordinates = (x, y) => {
@@ -55,10 +54,10 @@ function Background({ isSidebarOpen }) {
 
   return (
     <BackgroundWrapper
-      style={{ transform: scale.interpolate(s => `scale(${s})`) }}
       onMouseMove={({ clientX, clientY }) => (
         setCoords({ xy: updateCoordinates(clientX, clientY) })
       )}
+      style={{ transform: scale.interpolate(s => `scale(${s})`) }}
     >
       <Images
         style={{

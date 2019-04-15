@@ -13,6 +13,11 @@ const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
   @font-face {
     font-family: 'Brandon Bld';
     src: url(${BrandonBld});

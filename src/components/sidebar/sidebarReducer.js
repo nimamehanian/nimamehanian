@@ -2,8 +2,8 @@ import {
   SIDEBAR_OPEN,
   SIDEBAR_SHUT,
   SIDEBAR_PEEK,
-  SIDEBAR_TUCK
-  // SIDEBAR_LINK_SELECT
+  SIDEBAR_TUCK,
+  SIDEBAR_LINK_SELECT
 } from './sidebarActions';
 
 const initialState = {
@@ -12,12 +12,22 @@ const initialState = {
   activeIndex: 0,
   links: [
     { name: 'home', isActive: true },
-    { name: 'about', isActive: false },
+    { name: 'story', isActive: false },
     { name: 'classes', isActive: false },
-    { name: 'workshops', isActive: false },
+    { name: 'work', isActive: false },
     { name: 'blog', isActive: false },
+    { name: 'resources', isActive: false },
     { name: 'connect', isActive: false },
   ],
+};
+
+const setActiveLink = (links = [], index) => {
+  const reset = links.map(({ name }) => ({ name, isActive: false }));
+  return [
+    ...reset.slice(0, index),
+    { name: reset[index].name, isActive: true },
+    ...reset.slice(index + 1),
+  ];
 };
 
 const sidebar = (state = initialState, action) => {
@@ -30,12 +40,12 @@ const sidebar = (state = initialState, action) => {
       return { ...state, isSidebarPeeking: true };
     case SIDEBAR_TUCK:
       return { ...state, isSidebarPeeking: false };
-    // case SIDEBAR_LINK_SELECT:
-    //   return {
-    //     ...state,
-    //     activeIndex: action.index,
-    //     links: links(state.links, action.index)
-    //   };
+    case SIDEBAR_LINK_SELECT:
+      return {
+        ...state,
+        activeIndex: action.index,
+        links: setActiveLink(state.links, action.index),
+      };
     default:
       return state;
   }

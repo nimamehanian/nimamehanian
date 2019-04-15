@@ -20,7 +20,6 @@ const Bar = styled(animated.div)`
   background-color: #f5f7f9;
   height: 2px;
   margin: 6px 4px;
-  will-change: transform, opacity;
 `;
 
 function Hamburger({ isSidebarOpen }) {
