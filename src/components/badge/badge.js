@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { $lime } from 'styles/colors';
+import { disableHighlight } from 'styles/mixins';
 
 import Logo from 'components/logo/logo';
 
@@ -16,6 +17,7 @@ const BadgeWrapper = styled.div`
   top: 0px;
   left: 0px;
   z-index: 3;
+  ${disableHighlight}
 `;
 
 const Name = styled.div`

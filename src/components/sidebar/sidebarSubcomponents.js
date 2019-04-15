@@ -5,6 +5,7 @@ import {
   $grey1,
   $white70
 } from 'styles/colors';
+import { disableHighlight } from 'styles/mixins';
 
 export const SidebarPanel = styled(animated.div)`
   position: absolute;
@@ -18,6 +19,7 @@ export const SidebarPanel = styled(animated.div)`
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
+  ${disableHighlight}
 `;
 
 export const Screen = styled(animated.div)`
@@ -58,13 +60,13 @@ export const FillInner = styled(Fill)`
 
 export const FillLeft = styled(Fill)`
   opacity: 0;
-  transition: opacity 400ms cubic-bezier(0.55, 0.31, 0.15, 0.93) 200ms;
 `;
+  // transition: opacity 400ms cubic-bezier(0.55, 0.31, 0.15, 0.93) 200ms;
 
 export const FillRight = styled(Fill)`
   opacity: 0;
-  transition: opacity 400ms cubic-bezier(0.55, 0.31, 0.15, 0.93) 200ms;
 `;
+  // transition: opacity 400ms cubic-bezier(0.55, 0.31, 0.15, 0.93) 200ms;
 
 const Stroke = styled(animated.div)`
   background: ${$white70};
