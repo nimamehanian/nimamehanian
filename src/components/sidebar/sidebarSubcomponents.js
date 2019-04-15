@@ -6,6 +6,30 @@ import {
   $white70
 } from 'styles/colors';
 
+export const SidebarPanel = styled(animated.div)`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  max-width: 314px;
+  padding-top: 140px;
+  z-index: 3;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+`;
+
+export const Screen = styled(animated.div)`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  background: rgb(0, 0, 0);
+`;
+
 export const SidebarLinkWrapper = styled(animated.div)`
   background: ${$green1};
   color: ${$grey1};

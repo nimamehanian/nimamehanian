@@ -30,6 +30,7 @@ function SidebarLink({
     fillInnerScaleX: 1,
     config: { mass: 1, tension: 140, friction: 20 },
   }));
+
   const [{ fillLeftOffsetX }, setFillLeftOffsetX] = useSpring(() => ({
     fillLeftOffsetX: -100,
     config: { mass: 2, tension: 260, friction: 28 },
@@ -38,6 +39,7 @@ function SidebarLink({
     fillRightOffsetX: -100,
     config: { mass: 2, tension: 260, friction: 28 },
   }));
+
   const [{ strokeLeftOffsetX }, setStrokeLeftOffsetX] = useSpring(() => ({
     strokeLeftOffsetX: -2,
     config: { mass: 1, tension: 270, friction: 24 },
