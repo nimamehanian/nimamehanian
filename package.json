@@ -32,7 +32,8 @@
     "build": "yarn run clean && yarn run copy",
     "start": "yarn run build && webpack-dev-server",
     "test": "jest",
-    "test:watch": "yarn run test -- --watch"
+    "test:watch": "yarn run test -- --watch",
+    "deploy": "NODE_ENV=production && yarn build && firebase deploy"
   },
   "dependencies": {
     "connected-react-router": "6.4.0",
