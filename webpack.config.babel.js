@@ -22,7 +22,8 @@ const config = {
       {
         test: /\.(gif|jpg|png|svg|eot|otf|ttf|woff(2)?)$/,
         exclude: /node_modules/,
-        loader: 'url-loader?limit=100000&name=/[name].[ext]',
+        loader: 'url-loader?name=/[name].[ext]',
+        options: { limit: 100000 },
       },
     ],
   },
@@ -34,6 +35,7 @@ const config = {
       images: `${__dirname}/src/images`,
       styles: `${__dirname}/src/styles`,
       utils: `${__dirname}/src/utils`,
+      root: `${__dirname}`,
     },
   },
 
